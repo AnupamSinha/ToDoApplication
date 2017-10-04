@@ -70,8 +70,16 @@ java -jar ToDoApplication-1.0.0.jar
 
 ## Screen Shots
 
+Starting Screen
 ![Settings Window](https://github.com/AnupamSinha/ToDoApplication/blob/master/screenshot/ToDo-List-Emirates-Assessment-1.png)
-
+Adding new ToDo Item
+![Settings Window](https://github.com/AnupamSinha/ToDoApplication/blob/master/screenshot/ToDo-List-Emirates-Assessment-2.png)
+Save the new ToDo Item
+![Settings Window](https://github.com/AnupamSinha/ToDoApplication/blob/master/screenshot/ToDo-List-Emirates-Assessment-3.png)
+Mark As Completed
+![Settings Window](https://github.com/AnupamSinha/ToDoApplication/blob/master/screenshot/ToDo-List-Emirates-Assessment-4.png)
+Delete the ToDo Item
+![Settings Window](https://github.com/AnupamSinha/ToDoApplication/blob/master/screenshot/ToDo-List-Emirates-Assessment-5.png)
 
 ## To be done later point of time
 ### Validation of the feilds. 
