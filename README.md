@@ -42,9 +42,17 @@ cd target
 java -jar ToDoApplication-1.0.0.jar
 ```
 
-Also since there is the target folder already avaiable as part of this GIT one can directly enter the below command in the command prompt in the root folder No Installation required.
+If One doesn't want to do the above installation, please download the jar in the below location in Google Drive.
+https://drive.google.com/open?id=0B_gABTyRlEoqWnJTRGNROFVYVHM
+
+Once downloaded if the file is available in the below location
 ```
-cd target
+C:\Downloads\ToDoApplication-1.0.0.jar
+```
+Please execute the below command in the command prompt.
+
+```
+cd C:\Downloads
 java -jar ToDoApplication-1.0.0.jar
 ```
 
