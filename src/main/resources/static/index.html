@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet"
+	href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="./bower_components/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet"
+	href="./bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+<link href="./bower_components/pnotify/dist/pnotify.css"
+	rel="stylesheet">
+<link href="./bower_components/pnotify/dist/pnotify.buttons.css"
+	rel="stylesheet">
+<link href="./bower_components/pnotify/dist/pnotify.nonblock.css"
+	rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToDo List | Emirates Assessment</title>
+
+</head>
+<body ng-app="myApp">
+	<script type="text/javascript"
+		src="./bower_components/jquery/dist/jquery.min.js"></script>
+	<script
+		src="./bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.js"></script>
+	<script
+		src="./bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script
+		src="./bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+	<div class="container" ng-controller="AppController">
+		<hr />
+		<div class="alert alert-info" role="alert"
+			ng-hide="items &amp;&amp; items.length > 0">There are no items
+			yet.</div>
+		<form class="form-horizontal" role="form"
+			ng-submit="addItem(newItem,newPriority,newCompletedOn)"
+			name="toDoForm">
+
+			<div class="box custom-box"
+				ng-show="items &amp;&amp; items.length > 0">
+				<div class="box-header">
+					<h3 class="box-title">
+						<i class="fa fa-list" aria-hidden="true"></i> ToDo List
+					</h3>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">
+					<table id="dataTable" class="table table-bordered table-hover">
+						<thead>
+							<th>Description</th>
+							<th>Priority</th>
+							<th>Status</th>
+							<th>Created Date</th>
+							<th>Completion Date</th>
+							<th>Completed Date</th>
+							<th>Action</th>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in items">
+								<td class="col-md-4 {{item.completedCss}}"><label>{{item.description}}
+								</label></td>
+								<td><label><small class="label label-{{item.css}}">
+											{{item.priority}} </small></label></td>
+								<td><label><small
+										class="label label-{{item.statusCss}}">
+											{{item.status}} </small></label></td>
+								<td><small>{{item.createDate}}</small></td>
+								<td><small>{{item.completedOn}}</small></td>
+								<td><small>{{item.completedDate}}</small></td>
+								<td class="col-md-2">
+									<button class="btn btn-app btn-danger btn-space" type="button"
+										title="Delete" ng-click="deleteItem(item)">
+										<span class="glyphicon glyphicon-trash"></span>
+									</button> &nbsp;&nbsp;&nbsp;
+									<button class="btn btn-app btn-info btn-space" type="button"
+										ng-disabled="item.disabledOnCompleted == 'disabled'"
+										title="Mark as Completed" ng-click="completeTask(item)">
+										<span class="fa fa-hourglass-end"></span>
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<script>
+						$('#dataTable').DataTable();
+					</script>
+				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<div class="box box-info center-block">
+					<div class="box-header with-border">
+						<h3 class="box-title">Add A New ToDo Item</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="form-group">
+							<label for="priority" class="col-sm-2 control-label">Priority<small>
+									High/Low/Medium</small></label>
+
+							<div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="Priority"
+									ng-model="newPriority"
+									uib-typeahead="state for state in states | filter:$viewValue | limitTo:8"
+									id="search" required name="priority"> <span
+									class="input-group-btn">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="description" class="col-sm-2 control-label">Description</label>
+
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="description"
+									ng-model="newItem" placeholder="Enter the description..."
+									required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="completedOn" class="col-sm-2 control-label">To
+								Be Completed On</label>
+
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="completedOn"
+									ng-model="newCompletedOn" required
+									data-inputmask="'alias': 'dd/mm/yyyy'" data-mask />
+								<script>
+									$('#completedOn').inputmask('mm/dd/yyyy', {
+										'placeholder' : 'mm/dd/yyyy'
+									});
+								</script>
+							</div>
+						</div>
+					</div>
+					<!-- /.box-body -->
+					<div class="box-footer">
+						<button class="btn btn-default" ng-disabled="!newItem"
+							type="button" title="Reset" ng-click="reset()">
+							<i class="fa fa-refresh" aria-hidden="true"></i> Reset
+						</button>
+						<button class="btn btn-success pull-right" type="submit"
+							ng-disabled="!newItem && !newCompletedOn && !newPriority"
+							title="Add">
+							<i class="fa fa-plus-square" aria-hidden="true"></i> Add
+						</button>
+					</div>
+				</div>
+			</div>
+		</form>
+
+		<div class="clearfix"></div>
+	</div>
+	<script type="text/javascript"
+		src="./bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript"
+		src="./bower_components/angular-resource/angular-resource.min.js"></script>
+	<script type="text/javascript"
+		src="./bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript"
+		src="./bower_components/lodash/dist/lodash.min.js"></script>
+	<!-- PNotify -->
+	<script type="text/javascript"
+		src="./bower_components/pnotify/dist/pnotify.js"></script>
+	<script type="text/javascript"
+		src="./bower_components/pnotify/dist/pnotify.buttons.js"></script>
+	<script type="text/javascript"
+		src="./bower_components/pnotify/dist/pnotify.nonblock.js"></script>
+	<script type="text/javascript" src="./app/app.js"></script>
+	<script type="text/javascript" src="./app/controllers.js"></script>
+	<script type="text/javascript" src="./app/services.js"></script>
+
+</body>
+</html>
