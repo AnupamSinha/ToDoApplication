@@ -68,6 +68,11 @@ cd C:\Downloads
 java -jar ToDoApplication-1.0.0.jar
 ```
 
+## Screen Shots
+
+![Settings Window](https://raw.github.com/AnupamSinha/ToDoApplication/blob/master/screenshot/ToDo-List-Emirates-Assessment-1.png)
+
+
 ## To be done later point of time
 ### Validation of the feilds. 
 As there was limited time, the validation hasn't been done, as I was more concentrated in the creating the application and managing the success flow.
