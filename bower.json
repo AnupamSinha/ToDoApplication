@@ -1,0 +1,16 @@
+{
+	"name": "ToDoApplication",
+	"version": "1.0.0",
+	"dependencies": {
+		"angular": "^1.4.0",
+        "angular-resource": "^1.4.0",
+        "jquery": "^3.2.1",
+        "bootstrap": "*",
+        "angular-bootstrap": "*",
+        "font-awesome": "fontawesome#^4.6.1",
+		"lodash":"4.17.4",
+		"jquery.inputmask":"*",
+		"datatables.net-bs":"*",
+		"pnotify": "*"
+	}
+}
