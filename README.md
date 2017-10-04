@@ -70,7 +70,7 @@ java -jar ToDoApplication-1.0.0.jar
 
 ## Screen Shots
 
-![Settings Window](https://raw.github.com/AnupamSinha/ToDoApplication/blob/master/screenshot/ToDo-List-Emirates-Assessment-1.png)
+![Settings Window](https://github.com/AnupamSinha/ToDoApplication/blob/master/screenshot/ToDo-List-Emirates-Assessment-1.png)
 
 
 ## To be done later point of time
