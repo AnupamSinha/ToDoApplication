@@ -28,9 +28,11 @@ With Spring Boot you can even leave the configuration behind for configuring Spr
 ## Installation
 
 #Pre-Requiste
+```
 Bower
 Maven
 JDK 1.8 or above
+```
 
 Installation is quite easy, first you will have to install some front-end dependencies using Bower:
 ```
@@ -51,8 +53,9 @@ java -jar ToDoApplication-1.0.0.jar
 ## Running the Application without installation.
 
 #Pre-Requiste
+```
 JDK 1.8 or above
-
+```
 
 If One doesn't want to do the above installation, please download the jar in the below location in Google Drive.
 https://drive.google.com/open?id=0B_gABTyRlEoqWnJTRGNROFVYVHM
@@ -66,6 +69,13 @@ Please execute the below command in the command prompt.
 ```
 cd C:\Downloads
 java -jar ToDoApplication-1.0.0.jar
+```
+
+## Running the application
+
+Once the application is up, open a web brower and hit the below URL
+```
+http://localhost:8081
 ```
 
 ## Screen Shots
