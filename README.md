@@ -71,7 +71,7 @@ cd C:\Downloads
 java -jar ToDoApplication-1.0.0.jar
 ```
 
-## Running the application
+## Viewing the application
 
 Once the application is up, open a web brower and hit the below URL
 ```
